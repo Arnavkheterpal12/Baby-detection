@@ -17,7 +17,7 @@ function draw(){
     {
         objectDetecter.detect(person,gotResult);
         for(i=0; i<objects.length;i++){
-            document.getElementById("status").innerHTML="Status: Baby not in front of cam"
+            document.getElementById("status").innerHTML="Status: Baby not in front of camera"
 
             fill('#32CD32');
             percent=floor(object[i].confidence*100);
@@ -37,9 +37,6 @@ function start(){
 function modelLoaded(){
     console.log("Model Loaded!");
     status=true;
-    video.loop();
-    video.speed(1);
-    video.volume(0);
 }
 function gotResult(error,results){
     if(error){
